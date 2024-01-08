@@ -6,24 +6,24 @@ import { Icon } from "@iconify/react";
 
 const DATA = [
     {
-        title: "Template",
+        title: "Hubungi Kami",
         items: [
             {
-                label: "Features",
+                label: "(022)4218177",
                 href: "#features"
             },
             {
-                label: "Testimonials",
+                label: "officialgopusat@gmail.com",
                 href: "#testimonials"
             },
             {
-                label: "FAQ",
+                label: "+62 811-2468-988",
                 href: "#faq"
             }
         ]
     },
     {
-        title: "Company",
+        title: "Info Lebih Lanjut",
         items: [
             {
                 label: "About",
@@ -54,25 +54,29 @@ export const Footer = () => {
     const year = date.getFullYear();
 
     return (
-        <footer id="footer" className="bg-white">
+        <footer id="footer" className="bg-white-300">
             {/* Footer Links */}
             <SectionContainer className="footer--container wrap wrap-px relative z-10">
-                <div className="footer--content-container py-16">
-                    <div className="footer-links mb-12 grid grid-cols-2 gap-8 md:mb-16 md:grid-cols-8 lg:grid-cols-12">
-                        <div className="col-span-6">
+                <div className="footer--content-container py-8">
+                    <div className="footer-links mb-12 grid grid-cols-2 gap-8 md:mb-0 md:grid-cols-12 ">
+                        <div className="col-span-4">
                             <div className="footer--logo grid gap-8">
                                 <Link href="/">
                                     <Image
-                                        src="/logoGOcolor.svg"
+                                        src="/tessupracamp/logoGOcolor.svg"
                                         alt="logo"
                                         className="h-16 w-auto"
                                         height="25"
                                         width="100"
                                         priority
                                     />
+                                    <p>
+                                        Bimbel Terbaik dan Terbesar Se-Indonesia
+                                    </p>
                                 </Link>
+
                                 {/* Get Template button; remove if not used */}
-                                <ButtonGroup alignment="left">
+                                {/* <ButtonGroup alignment="left">
                                     <a
                                         role="button"
                                         href="https://github.com/christian-luntok/nutritrack"
@@ -81,14 +85,14 @@ export const Footer = () => {
                                         Download
                                         <Icon icon="material-symbols:arrow-forward-rounded" />
                                     </a>
-                                </ButtonGroup>
+                                </ButtonGroup> */}
                             </div>
                         </div>
-                        <div className="col-span-6">
+                        <div className="col-span-8">
                             <div className="footer-menu grid grid-cols-2 md:grid-cols-8 lg:grid-cols-12">
-                                {DATA.map((footerLinks) => (
+                                {DATA.map((footerLinks, i) => (
                                     <div
-                                        key={footerLinks.title}
+                                        key={i}
                                         className="footer-menu--container col-span-1 md:col-span-4"
                                     >
                                         <h3 className="font-bold text-base mb-2">
@@ -124,23 +128,13 @@ export const Footer = () => {
                 </div>
             </SectionContainer>
             {/* Footer Credits */}
-            <SectionContainer className="footer-credits relative z-10">
-                <div className="wrap wrap-px py-6">
+            {/* <SectionContainer className="footer-credits relative z-10">
+                <div className="wrap wrap-px py-1">
                     <p className="my-0">
-                        © {year} Nutritrack. All rights reserved{" - "}
-                        <span className="font-normal">
-                            A template by{" "}
-                            <Link
-                                className="transition-colors duration-300 hover:underline"
-                                href="https://chrstnl.com"
-                                target="_blank"
-                            >
-                                chrstnl.
-                            </Link>
-                        </span>
+                        © {year}, Ganesha Operation. All Rights Reserved
                     </p>
                 </div>
-            </SectionContainer>
+            </SectionContainer> */}
             <div className="footer--background"></div>
         </footer>
     );

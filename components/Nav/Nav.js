@@ -3,11 +3,10 @@ import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { useRouter } from "next/router";
 
-
 const navigation = [
-    { name: "Fasilitas", to: "#features", href: "/#features" },
+    { name: "Fasilitas", to: "#fasilitas", href: "/#fasilitas" },
     { name: "Testimoni", to: "#testimonials", href: "/#testimonials" },
-    { name: "Diskon", to: "#testimonials", href: "/#testimonials" }
+    { name: "Diskon", to: "#diskon", href: "/#diskon" }
 ];
 
 export const Nav = () => {

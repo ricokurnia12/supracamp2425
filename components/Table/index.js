@@ -8,7 +8,7 @@ const Table = () => {
             <p className="font-bold">
                 Ketentuan Diskon Program SupraCamp Ganesha Operation
             </p>
-            <p className="-mt-8"> 
+            <p className="-mt-8">
                 A. Berlaku diskon spesial dengan ketentuan: <br />
                 Jika membayar biaya pesan tempat minimal <b> Rp10.000.000 </b>
                 pada bulan tertentu berhak mendapatkan diskon (lihat tabel di
@@ -28,6 +28,7 @@ const Table = () => {
                         const genap = i % 2 === 0;
                         return (
                             <tr
+                                key={i}
                                 className={`${
                                     genap ? "bg-gray-100" : "bg-gray-200"
                                 } text-sm md:text-base`}
@@ -56,6 +57,7 @@ const Table = () => {
                         const genap = i % 2 === 0;
                         return (
                             <tr
+                                key={i}
                                 className={`${
                                     genap ? "bg-gray-100" : "bg-gray-200"
                                 } text-sm md:text-base`}

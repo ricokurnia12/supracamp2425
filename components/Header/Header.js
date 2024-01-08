@@ -4,7 +4,7 @@ import { SectionContainer } from "@components/Section";
 import { Nav } from "@components/Nav";
 import { ButtonGroup, Button } from "@components/Button";
 import { Icon } from "@iconify/react";
-
+import Logogo from "@components/assets/logoGO.svg";
 export const Header = () => {
     return (
         <header
@@ -16,7 +16,7 @@ export const Header = () => {
                     <h1 className="logo mb-0">
                         <Link href="/">
                             <Image
-                                src="/logoGO.svg"
+                                src={Logogo}
                                 alt="logo"
                                 className="h-8 w-auto"
                                 height="44"
@@ -26,18 +26,19 @@ export const Header = () => {
                         </Link>
                     </h1>
                 </div>
-                <SectionContainer className="flex items-center ml-auto">
-                    <Nav />
-                    <ButtonGroup className="hidden md:block">
+                <SectionContainer className="flex md:flex-row-reverse items-center ml-auto">
+                    <ButtonGroup className="">
                         <a
+                            href="https://wa.me/628112468988?text=Hallo,%20saya%20mau%20daftar%20surpacamp"
                             role="button"
-                            href="https://github.com/christian-luntok/nutritrack"
-                            className="btn btn--secondary ml-4 text-white"
+                            className="btn btn--secondary text-xs  md:ml-4 text-white"
+                            target="_blank"
+                            rel="noreferrer"
                         >
                             Daftar Sekarang
-                            <Icon icon="material-symbols:arrow-forward-rounded" />
                         </a>
                     </ButtonGroup>
+                    <Nav />
                 </SectionContainer>
             </SectionContainer>
         </header>

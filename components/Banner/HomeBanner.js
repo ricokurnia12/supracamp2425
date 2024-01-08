@@ -34,12 +34,12 @@ export const HomeBanner = () => {
                     </Content>
                     <div className="mt-6 mb-16 text-center">
                         <ButtonGroup alignment="center">
-                            <a className="btn btn--outline" href="#features">
+                            <a className="btn btn--outline" href="#supracamp">
                                 Apa itu Supracamp ?
                             </a>
                             <a
                                 role="button"
-                                href="https://github.com/christian-luntok/nutritrack"
+                                href="https://wa.me/628112468988?text=Hallo,%20saya%20mau%20daftar%20surpacamp"
                                 className="btn btn--secondary text-white"
                             >
                                 Daftar Sekarang
@@ -55,10 +55,10 @@ export const HomeBanner = () => {
                         src={Peoplehead}
                         alt="Page Banner"
                         objectFit="cover"
-                        className="mx-auto w-40 h-auto"
+                        className="mx-auto w-60 h-auto "
                         loading="lazy"
                         placeholder="blur"
-                        layout="responsive"
+                        // layout="responsive"
                     />
                 </div>
                 {/* </MotionBTTContainer> */}

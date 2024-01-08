@@ -37,7 +37,6 @@ export default function Home() {
         setIsMobile(window.innerWidth < 768);
 
         window.addEventListener("resize", handleResize);
-        console.log(isMobile);
 
         return () => {
             window.removeEventListener("resize", handleResize);
@@ -66,23 +65,16 @@ export default function Home() {
 
     return (
         <Layout className="">
-            <SEO
-                title="Ganesha Operation | Supracamp"
-                description="Discover NutriTrack, the effortless way to plan your meals with the power of Notion. Streamline your nutrition journey and achieve your health goals with ease."
-            />
+            <SEO title="Ganesha Operation | Supracamp" description="Testing" />
             <div className="main-wrapper bg-[#fdfeff] relative z-10 pb-20 pt-20">
                 {/* { Page Banner } */}
                 <HomeBanner />
                 {/* Components Container */}
                 <SectionContainer className="components--container wrap wrap-px grid gap-8 sm:gap-24">
-                    {/* Features */}
                     <MotionBTTContainer
                         transition={{ delay: 0.2, duration: 0.5 }}
                     >
-                        <SectionContainer id="features" className="features">
-                            <BadgeGroup alignment="center">
-                                <BadgeMessage>Features</BadgeMessage>
-                            </BadgeGroup>
+                        <SectionContainer id={`supracamp`} className="features">
                             <PageTitle
                                 className="text-center mx-auto"
                                 type="default"
@@ -109,15 +101,7 @@ export default function Home() {
                                 </p>
                             </Content>
                         </SectionContainer>
-                        <SectionContainer>
-                            <MotionBTTContainer
-                                transition={{ delay: 0.2, duration: 0.5 }}
-                            >
-                                <SectionContainer>
-                                    <PromoCall />
-                                </SectionContainer>
-                            </MotionBTTContainer>
-                        </SectionContainer>
+
                         <SectionContainer className="mt-8">
                             <PageTitle
                                 className="text-center mx-auto"
@@ -141,7 +125,10 @@ export default function Home() {
                     <MotionBTTContainer
                         transition={{ delay: 0.2, duration: 0.5 }}
                     >
-                        <SectionContainer className="feature-tabs">
+                        <SectionContainer
+                            id={`fasilitas`}
+                            className="feature-tabs"
+                        >
                             <BadgeGroup alignment="center">
                                 <BadgeMessage>More Features</BadgeMessage>
                                 <BadgeIcon icon="twemoji:waving-hand" />
@@ -173,6 +160,7 @@ export default function Home() {
                                                     className={
                                                         "justify-self-center"
                                                     }
+                                                    isImage={fasilitas.isImg}
                                                     src={fasilitas.image}
                                                     alt="Customizable Layouts image used."
                                                 />
@@ -194,27 +182,6 @@ export default function Home() {
                                         ? "Lihat Lebih Sedikit"
                                         : "Lihat Selengkapnya"}
                                 </Button>
-                                {/* <Card className="col-span-1 text-primary-900">
-                                    <CardBody className="w-full bg-white-600/20 p-12">
-                                        <CardImage
-                                            src="https://placehold.co/600x400.png"
-                                            alt="Progress Tracking image used."
-                                        />
-                                        <CardHeader className="!text-black !text-2xl !font-bold">
-                                            Progress Tracking
-                                        </CardHeader>
-                                        <p>
-                                            Celebrate your wins and stay
-                                            motivated on your nutrition journey.
-                                            NutriTrack allows you to monitor
-                                            your progress with weight,
-                                            measurements, and other key metrics.
-                                            Track your improvements over time
-                                            and see the positive impact of your
-                                            healthy choices.
-                                        </p>
-                                    </CardBody>
-                                </Card> */}
                             </CardGroup>
                         </SectionContainer>
                     </MotionBTTContainer>
@@ -233,7 +200,7 @@ export default function Home() {
                             <ol className="grid grid-cols-1 md:grid-cols-2">
                                 <li className="relative mb-6 sm:mb-0">
                                     <div className="flex items-center">
-                                        <div className="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full dark:bg-red-500 ring-8 ring-gray-900 shrink-0">
+                                        <div className="z-10 flex items-center justify-center w-6 h-6  rounded-full bg-red-500 ring-8 ring-gray-900 shrink-0">
                                             <svg
                                                 className="w-2.5 h-2.5 text-white "
                                                 aria-hidden="true"
@@ -259,7 +226,7 @@ export default function Home() {
                                                     loading="lazy"
                                                     alt="Zoom"
                                                     className="w-8 h-auto"
-                                                    src="/zoomicon.png"
+                                                    src="/tessupracamp/zoomicon.png"
                                                 />
                                                 <span className="text-sm">
                                                     KBM SupraCamp Live
@@ -349,12 +316,9 @@ export default function Home() {
                     <MotionBTTContainer
                         transition={{ delay: 0.2, duration: 0.5 }}
                     >
-                        <SectionContainer
-                            id="testimonials"
-                            className="benefits"
-                        >
+                        <SectionContainer id="diskon" className="benefits">
                             <BadgeGroup alignment="center">
-                                <BadgeMessage>Testimonials</BadgeMessage>
+                                <BadgeMessage>Diskon</BadgeMessage>
                                 <BadgeIcon icon="twemoji:waving-hand" />
                             </BadgeGroup>
 

@@ -4,16 +4,13 @@ import { Content } from "@components/Content";
 
 const PromoCall = () => {
     return (
-        <div className="grid lg:grid-cols-12">
+        <div className="grid lg:grid-cols-12 mt-8">
             <img
                 className="w-full hidden lg:block col-span-3"
                 src="https://ganeshaoperation.com/images/faq2.png"
             />
             <div className="col-span-8 flex flex-col justify-center">
-                <p
-                    className="font-bold text-start text-2xl"
-                    type="default"
-                >
+                <p className="font-bold text-start text-2xl" type="default">
                     DAFTAR LEBIH CEPAT, HARGA LEBIH MURAH
                 </p>
                 <Content>

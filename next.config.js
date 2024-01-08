@@ -12,15 +12,19 @@ const nextConfig = {
     sassOptions: {
         includePaths: [path.join(__dirname, "styles")]
     },
+    basePath: "/tessupracamp",
     images: {
-        formats: ["image/avif", "image/webp"],
-        domains: ["s.gravatar.com"]
+        // Disable image optimization
+        unoptimized: true
+        // You can add more image configuration here if needed
+        // formats: ["image/avif", "image/webp"],
+        // domains: ["s.gravatar.com"]
     },
     env: {
         siteTitle: "Ganesha Operation",
-        siteDescription: "Your company description.",
-        siteKeywords: "your company keywords",
-        siteUrl: "You site url"
+        siteDescription: "Tes",
+        siteKeywords: "Tes",
+        siteUrl: "Ganesha Operation"
     },
     headers() {
         return [

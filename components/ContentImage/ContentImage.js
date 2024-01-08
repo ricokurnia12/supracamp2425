@@ -3,6 +3,10 @@ import { Icon } from "@iconify/react";
 import Image from "next/image";
 import { v4 as uuid } from "uuid";
 import Slider from "react-slick";
+import Belajar1 from "@components/assets/belajar.png";
+import Belajar2 from "@components/assets/belajar2.png";
+import Bermain from "@components/assets/bermain.png";
+import Bermain2 from "@components/assets/bermain2.png";
 
 const settings = {
     dots: true,
@@ -14,27 +18,19 @@ const settings = {
 const ContentImageData = [
     {
         id: uuid(),
-        title: "Kegiatan belajar di hotel bintang 5",
+        title: "Rasakan Serunya Belajar di Hotel Bintang 4!",
         content:
-            "lorem ipsum We've got your grocery shopping covered! NutriTrack includes a handy shopping list feature. As you plan your meals, the template automatically generates a comprehensive shopping list. No more forgotten items or aimless wandering in the supermarket. Shopping for healthy ingredients has never been easier!",
+            "eL Hotel Royale Bandung merupakan salah satu hotel Bintang 4 terbaik di Kota Bandung. Fasilitasnya yang lengkap nggak hanya bikin kamu nyaman saat tinggal selama program, tetapi juga lingkungan yang ideal untuk belajar. Fasilitas lengkap yang ditawarkan tidak hanya menciptakan suasana belajar yang tenang dan fokus, tetapi juga memberikanmu kenyamanan ekstra selama proses pembelajaran",
         align: "right",
-        image: "https://placehold.co/600x400"
+        image: [Belajar1, Belajar2]
     },
     {
         id: uuid(),
-        title: "Seru-seruan bareng teman-teman",
+        title: "Bertemu dengan Teman-Teman yang Asyik",
         content:
-            "We've got your grocery shopping covered! NutriTrack includes a handy shopping list feature. As you plan your meals, the template automatically generates a comprehensive shopping list. No more forgotten items or aimless wandering in the supermarket. Shopping for healthy ingredients has never been easier!",
+            "Di sini kamu akan bertemu dengan teman-teman yang asyik dan akan menjadi kenangan seru yang enggak akan terlupakan! Mulai dari kegiatan belajar yang penuh semangat hingga kegiatan sosial yang seru, akan menambah setiap momen bersama teman-teman di SupraCamp menjadi petualangan yang penuh kebahagiaan. Jadi, rasakan “nge-ambis” bareng dengan cara yang menyenangkan di SupraCamp Ganesha Operation.",
         align: "left",
-        image: "/features2.png"
-    },
-    {
-        id: uuid(),
-        title: "Loremipsum",
-        content:
-            "We've got your grocery shopping covered! NutriTrack includes a handy shopping list feature. As you plan your meals, the template automatically generates a comprehensive shopping list. No more forgotten items or aimless wandering in the supermarket. Shopping for healthy ingredients has never been easier!",
-        align: "right",
-        image: "/features2.png"
+        image: [Bermain, Bermain2]
     }
 ];
 
@@ -53,22 +49,19 @@ export const ContentImage = () => {
                         }`}
                     >
                         <Slider {...settings}>
-                            <img
-                                src="https://placehold.co/600x400"
-                                width={512}
-                                height={512}
-                                objectFit="cover"
-                                alt="Process Banner 1"
-                                className="drop-shadow-xl w-40 offset-y-0 offset-x-8 blur-16"
-                            />
-                            <img
-                                src="https://placehold.co/600x400"
-                                width={512}
-                                height={512}
-                                objectFit="cover"
-                                alt="Process Banner 1"
-                                className="drop-shadow-xl w-40 offset-y-0 offset-x-8 blur-16"
-                            />
+                            {item.image.map((pict, i) => {
+                                return (
+                                    <Image
+                                        key={i}
+                                        src={pict}
+                                        width={412}
+                                        height={412}
+                                        objectFit="cover"
+                                        alt="Process Banner 1"
+                                        className="drop-shadow-xl w-32 offset-y-0 offset-x-8 blur-16"
+                                    />
+                                );
+                            })}
                         </Slider>
                     </div>
 
@@ -87,6 +80,7 @@ export const ContentImage = () => {
                             {item.listItems?.length &&
                                 item.listItems.map((listItem) => (
                                     <li
+                                    
                                         id={listItem.id}
                                         key={listItem.id}
                                         className="inline-grid grid-flow-col-dense"
