@@ -20,6 +20,30 @@ body {
     letter-spacing: rem(-0.5);
 }
 
+#hero {
+    background: rgb(225, 39, 40);
+    background: linear-gradient(
+        90deg,
+        rgba(225, 39, 40, 1) 15%,
+        rgba(231, 68, 88, 1) 51%,
+        rgba(255, 109, 127, 1) 100%
+    );
+}
+
+#hero2 {
+    background-image: url("../../components/assets/bg-tablet-pattern.svg");
+    background-repeat: no-repeat;
+    background-size: 800px;
+    background-position: 95% 175%;
+}
+
+.content--image {
+    background-image: url("../../components/assets/bg_keseruan2.svg");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .main {
     // @apply grid gap-8 sm:gap-16;
 }

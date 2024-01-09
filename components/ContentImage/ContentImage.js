@@ -7,13 +7,16 @@ import Belajar1 from "@components/assets/belajar.png";
 import Belajar2 from "@components/assets/belajar2.png";
 import Bermain from "@components/assets/bermain.png";
 import Bermain2 from "@components/assets/bermain2.png";
+import { PageTitle } from "@components/Title";
 
 const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 1,
-    slidesToScroll: 1
+    autoplay: true,
+    slidesToScroll: 1,
+    initialSlideHeight: 400
 };
 const ContentImageData = [
     {
@@ -36,12 +39,18 @@ const ContentImageData = [
 
 export const ContentImage = () => {
     return (
-        <SectionContainer className="process-items mt-16 space-y-16">
+        <SectionContainer className="content--image process-items mt-16 space-y-16 mx-auto py-8">
+            <PageTitle
+                className="text-center mx-auto text-white"
+                type="standart"
+            >
+                Intip keseruan prorgram Supracamp
+            </PageTitle>
             {ContentImageData.map((item) => (
                 <div
                     id={item.id}
                     key={item.id}
-                    className="process-item--container grid grid-cols-1 md:grid-cols-2 gap-y-8"
+                    className="grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto"
                 >
                     <div
                         className={`rounded-3xl ${
@@ -58,7 +67,7 @@ export const ContentImage = () => {
                                         height={412}
                                         objectFit="cover"
                                         alt="Process Banner 1"
-                                        className="drop-shadow-xl w-32 offset-y-0 offset-x-8 blur-16"
+                                        className="drop-shadow-2xl w-32 offset-y-0 offset-x-8 blur-16 rounded-md  border-4  border-white-50"
                                     />
                                 );
                             })}
@@ -66,10 +75,10 @@ export const ContentImage = () => {
                     </div>
 
                     <div
-                        className={`process-item--content ${
+                        className={`bg-white  p-4 process-item--content shadow-lg ${
                             item.align === "left"
-                                ? "md:pr-16 lg:pr-24 xl:pr-32 ml-auto"
-                                : "md:pl-16 lg:pl-24 xl:pl-32  mr-auto"
+                                ? "rounded-l-lg md:pr-16 lg:pr-16 xl:pr-20 ml-auto"
+                                : "rounded-r-lg md:pl-16 lg:pl-16 xl:pl-20  mr-auto"
                         } my-auto content text-black-400`}
                     >
                         <h3 className="mb-6 h4 md:h3 font-semibold text-black">
@@ -80,7 +89,6 @@ export const ContentImage = () => {
                             {item.listItems?.length &&
                                 item.listItems.map((listItem) => (
                                     <li
-                                    
                                         id={listItem.id}
                                         key={listItem.id}
                                         className="inline-grid grid-flow-col-dense"
@@ -96,6 +104,15 @@ export const ContentImage = () => {
                     </div>
                 </div>
             ))}
+            <iframe
+                className="w-full max-w-3xl mx-auto aspect-video rounded-md border-gray-300 shadow-lg"
+                src="https://www.youtube.com/embed/2WzTDQ7jd88"
+                title="Nge-Game Bareng SupraCamp"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                loading="lazy"
+            ></iframe>
         </SectionContainer>
     );
 };

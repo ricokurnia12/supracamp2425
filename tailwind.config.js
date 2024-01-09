@@ -11,6 +11,15 @@ module.exports = {
                 body: ["Inter", "Sans Serif"],
                 title: ["Inter", "Sans Serif"]
             },
+            backgroundImage: {
+                "custom-gradient":
+                    "linear-gradient(268deg, #FFC005 -9.35%, #EC323E 126.09%)",
+                "custom-gradient2":
+                    "linear-gradient(93deg, #ED9400 -2.81%, #F3505B 95.25%)",
+                "custom-gradient3":
+                    "linear-gradient(180deg, #FFC005 0%, rgba(255, 255, 255, 0.00) 196.87%)"
+            },
+
             fontSize: {
                 body: [
                     "1rem",
