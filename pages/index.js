@@ -2,11 +2,11 @@ import { BadgeMessage, BadgeGroup, BadgeIcon } from "@components/Badge";
 import { SectionContainer } from "@components/Section";
 import { PageTitle } from "@components/Title";
 import { Layout } from "@components/Layout";
-import { HomeBanner } from "@components/Banner";
+
 import { Columns } from "@components/Columns";
 import { ContentImage } from "@components/ContentImage";
 import { Content } from "@components/Content";
-import { Accordion } from "@components/Accordion";
+
 import { MotionBTTContainer } from "@components/Motion";
 import SEO from "@components/SEO/SEO";
 import {
@@ -23,9 +23,13 @@ import { dataFasilitas } from "@components/Data";
 import { Button } from "@components/Button";
 import Table from "@components/Table";
 import Hero from "@components/Hero";
-import PromoCall from "@components/PromoCall";
-import { Icon } from "@iconify/react";
+
 import Timeline from "@components/Timline";
+import Najwa from "@components/assets/najwa.png";
+import Image from "next/image";
+import Script from "next/script";
+import SkemaSc from "@components/assets/skemaSc.png";
+import { Icon } from "@iconify/react";
 
 export default function Home() {
     const [isMobile, setIsMobile] = useState(false);
@@ -68,7 +72,30 @@ export default function Home() {
 
     return (
         <Layout className="">
-            <SEO title="Ganesha Operation | Supracamp" description="Testing" />
+            <SEO
+                title="Ganesha Operation | SupraCamp"
+                description="SupraCamp adalah program unggulan Ganesha Operation dengan fasilitas all in, di mana kamu akan belajar dan tinggal di éL Hotel, hotel Bintang 4 terbaik di Kota Bandung."
+            />
+            <Script
+                strategy="lazyOnload"
+                id="gtm-script"
+                src="https://www.googletagmanager.com/gtag/js?id=G-GFBCTCXQD2"
+            />
+            <Script
+                strategy="lazyOnload"
+                id="gtm-config"
+                dangerouslySetInnerHTML={{
+                    __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
+                gtag("js", new Date());
+
+                gtag("config", "G-GFBCTCXQD2" ,{page_path: window.location.pathname,});
+              `
+                }}
+            ></Script>
 
             <div className="main-wrapper bg-[#fdfeff] relative z-10 pb-20 pt-10">
                 {/* { Page Banner } */}
@@ -90,7 +117,7 @@ export default function Home() {
                                         className="text-center mx-auto"
                                         type="default"
                                     >
-                                        Kenapa kamu harus ikut Supracamp Ganesha
+                                        Kenapa kamu harus ikut SupraCamp Ganesha
                                         Operation ?
                                     </PageTitle>
                                     <Content
@@ -98,14 +125,58 @@ export default function Home() {
                                         alignment="center"
                                     >
                                         <p>
-                                            Supracamp Ganesha Operation
-                                            memberikan kamu pengalaman yang luar
-                                            biasa dan belajar secara intensif
-                                            selama 3 bulan di hotel bintang 5
-                                            bandung.
+                                            Melalui SupraCamp kamu akan
+                                            mendapatkan pengalaman luar biasa
+                                            dimana detik demi detik waktu kamu
+                                            akan kami atur dengan seimbang dalam
+                                            persiapan menghadapi UTBK-SNBT di
+                                            lingkungan yang kondusif disertai
+                                            fasilitas lengkap dan pengawasan 24
+                                            jam.
                                         </p>
+                                        <div className="flex flex-col md:flex-row items-center justify-center mt-8">
+                                            <div className="flex flex-col gap-4">
+                                                {" "}
+                                                <div className="text-center border rounded-md shadow-md p-1 bg-[#FFF212] relative flex items-center px-8 md:ps-12 md:pe-4">
+                                                    <Icon
+                                                        className="text-red-500 w-16 h-16 absolute -left-6 rounded-full mr-2 flex items-center justify-center"
+                                                        icon={
+                                                            "lets-icons:check-fill"
+                                                        }
+                                                    />
+
+                                                    <div>
+                                                        Semua keperluan
+                                                        disiapkan GO
+                                                    </div>
+                                                </div>
+                                                <div className="text-center border rounded-md text-white shadow-md p-1 bg-[#E84559] relative flex items-center justify-center  px-8 md:ps-12 md:pe-4">
+                                                    <Icon
+                                                        className="text-yellow-300 w-16 h-16 absolute -left-6 rounded-full mr-2 flex items-center justify-center"
+                                                        icon={
+                                                            "lets-icons:check-fill"
+                                                        }
+                                                    />
+                                                    Siswa fokus belajar
+                                                </div>
+                                                <div className=" border rounded-md text-white shadow-md p-1 bg-[#E12728] relative flex items-center  justify-center px-8 md:ps-12 md:pe-4">
+                                                    <Icon
+                                                        className="text-yellow-400 w-16 h-16 absolute -left-6 rounded-full mr-2 flex items-center justify-center"
+                                                        icon={
+                                                            "lets-icons:check-fill"
+                                                        }
+                                                    />
+                                                    Orang tua tenang
+                                                </div>
+                                            </div>
+
+                                            <Image
+                                                className="w-80 "
+                                                src={SkemaSc}
+                                            />
+                                        </div>
                                     </Content>
-                                    <CardGroup className="grid scroll-m-24 gap-4 grid-cols-1 max-w-full  mx-auto mt-24 md:grid-cols-2 xl:grid-cols-3  transition-all duration-300 h-auto">
+                                    <CardGroup className=" grid scroll-m-24 gap-4 grid-cols-1 max-w-full  mx-auto mt-16 md:grid-cols-2 xl:grid-cols-3  transition-all duration-300 h-auto">
                                         {sliceFas?.map((fasilitas, i) => {
                                             return (
                                                 <Card
@@ -156,14 +227,17 @@ export default function Home() {
                     <MotionBTTContainer
                         transition={{ delay: 0.2, duration: 0.5 }}
                     >
-                        <SectionContainer
-                            id="testimonials"
-                            className="benefits"
-                        >
+                        <SectionContainer className="benefits mt-8">
                             <BadgeGroup alignment="center">
                                 <BadgeMessage>Timeline</BadgeMessage>
                                 <BadgeIcon icon="twemoji:waving-hand" />
                             </BadgeGroup>
+                            <PageTitle
+                                className="text-center mx-auto"
+                                type="standart"
+                            >
+                                Catat Timelinenya ya!
+                            </PageTitle>
                             <Timeline />
                         </SectionContainer>
                     </MotionBTTContainer>
@@ -180,32 +254,13 @@ export default function Home() {
                                 <BadgeMessage>Testimonials</BadgeMessage>
                                 <BadgeIcon icon="twemoji:waving-hand" />
                             </BadgeGroup>
-                            <PageTitle className="" type="default">
-                                Apa kata mereka yang sudah mengikuti Supracamp ?
+                            <PageTitle className="" type="standart">
+                                Apa kata mereka yang sudah mengikuti SupraCamp ?
                             </PageTitle>
                             <Columns />
                         </SectionContainer>
                     </MotionBTTContainer>
-                    {/* Accordions */}
-                    {/* <MotionBTTContainer
-                        transition={{ delay: 0.2, duration: 0.5 }}
-                    >
-                        <SectionContainer id="faq" className="faq">
-                            <BadgeGroup alignment="center">
-                                <BadgeMessage>FAQ</BadgeMessage>
-                            </BadgeGroup>
-                            <PageTitle
-                                className="text-center mx-auto"
-                                type="default"
-                            >
-                                Got some burning questions about NutriTrack?{" "}
-                                <br></br>
-                                <br></br>No worries! We&apos;ve got the answers
-                                you need:
-                            </PageTitle>
-                            <Accordion />
-                        </SectionContainer>
-                    </MotionBTTContainer> */}
+
                     <MotionBTTContainer
                         transition={{ delay: 0.2, duration: 0.5 }}
                     >
@@ -229,10 +284,40 @@ export default function Home() {
                                 <p>
                                     Khusus untukmu, jangan lewatkan kesempatan
                                     Istimewa! Dapatkan penawaran spesial dengan
-                                    potongan harga hingga15% dengan mendaftar
+                                    potongan harga hingga 15% dengan mendaftar
                                     lebih cepat.
                                 </p>
                             </Content>
+                            <div className="w-full flex mx-auto justify-center">
+                                <div className="hidden lg:block">
+                                    <Image
+                                        alt="nawja ganesha opeartion supracamp"
+                                        className="w-48"
+                                        src={Najwa}
+                                    />
+                                </div>
+                                <div className=" text-center lg:text-start">
+                                    <PageTitle type="small">
+                                        DAFTAR LEBIH CEPAT, HARGA LEBIH MURAH!
+                                    </PageTitle>
+                                    <Content
+                                        className="text-center -mt-4 mb-8 lg:text-start"
+                                        alignment="center"
+                                    >
+                                        <p>
+                                            Dapatkan kesempatan istimewa dengan
+                                            daftar lebih cepat dan nikmati
+                                            program eksklusif dengan harga yang
+                                            lebih terjangkau! Kamu bisa
+                                            menikmati harga lebih hemat yang
+                                            nggak akan kamu temukan di lain
+                                            waktu. Penawarannya terbatas, lho,
+                                            jangan sampai kelewatan. Yuk, daftar
+                                            sekarang!
+                                        </p>
+                                    </Content>
+                                </div>
+                            </div>
                             <Table />
                         </SectionContainer>
                     </MotionBTTContainer>

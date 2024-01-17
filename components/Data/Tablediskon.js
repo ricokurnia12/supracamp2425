@@ -1,10 +1,5 @@
 export const diskonBulan = [
     {
-        expDate: "Desember 2023",
-        jenis: "Diskon Spesial Promo Mulai Tanggal 19 s.d 31 Desember 2023",
-        diskon: "15%"
-    },
-    {
         expDate: "Januari 2024",
         jenis: "Diskon Spesial Promo Mulai Tanggal 1 s.d 31 Januari 2024",
         diskon: "13%"
@@ -26,7 +21,7 @@ export const diskonBulan = [
     },
     {
         expDate: "Mei 2024",
-        jenis: "Diskon Spesial Promo Mulai Tanggal 1 s.d 31 Mei 2024",
+        jenis: "Diskon Spesial Promo Mulai Tanggal 1 s.d 20 Mei 2024",
         diskon: "3%"
     }
 ];

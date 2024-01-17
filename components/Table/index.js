@@ -88,6 +88,19 @@ const Table = () => {
                     dikembalikan dengan alasan apapun.
                 </li>
             </ul>
+            <p className="font-bold text-red-500">Catatan:</p>
+            <ul className="list-disc -mt-8">
+                <li>
+                    Siswa wajib memilih lokasi UTBK di Bandung agar siswa
+                    terpantau dan mendapatkan pembinaan yang maksimal hingga H-1
+                    UTBK-SNBT.
+                </li>
+                <li>
+                    Siswa wajib melakukan konsultasi dengan konselor GO sebelum
+                    melakukan pendaftaran UTBK-SNBT agar mendapat strategi
+                    terbaik untuk pemilihan tempat dan waktu ujian.
+                </li>
+            </ul>
         </>
     );
 };

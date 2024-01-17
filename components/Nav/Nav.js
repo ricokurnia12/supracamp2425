@@ -2,11 +2,15 @@ import { useState } from "react";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { useRouter } from "next/router";
-
+import { BaseUrl } from "@components/Baseurl";
 const navigation = [
-    { name: "Fasilitas", to: "#fasilitas", href: "/#fasilitas" },
-    { name: "Testimoni", to: "#testimonials", href: "/#testimonials" },
-    { name: "Diskon", to: "#diskon", href: "/#diskon" }
+    {
+        name: "Fasilitas",
+        to: `#fasilitas`,
+        href: `#fasilitas`
+    },
+    { name: "Testimoni", to: "#testimonials", href: `#testimonials` },
+    { name: "Diskon", to: "#diskon", href: "#diskon" }
 ];
 
 export const Nav = () => {
@@ -15,6 +19,16 @@ export const Nav = () => {
 
     const closeNav = () => {
         setIsNavOpen(false);
+    };
+    const scrollToSection = (e, id) => {
+        e.preventDefault(); // Menghentikan perilaku default dari link
+        const section = document.querySelector(id); // Mendapatkan elemen yang diinginkan
+        if (section) {
+            window.scrollTo({
+                top: section.offsetTop,
+                behavior: "smooth" // Animasi scroll ke bagian tersebut
+            });
+        }
     };
     return (
         <nav className="header-nav">
@@ -52,7 +66,10 @@ export const Nav = () => {
                                     className={`menu-item--link flex items-center
                     ${router.pathname === item.href ? "active" : ""}
                   `}
-                                    onClick={closeNav}
+                                    onClick={(e) => {
+                                        closeNav();
+                                        scrollToSection(e, item.href); // Memanggil fungsi scrollToSection saat link diklik
+                                    }}
                                     target={item.target ? item.target : "_self"}
                                 >
                                     {item.name}

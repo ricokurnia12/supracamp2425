@@ -1,55 +1,65 @@
 import { SectionContainer } from "@components/Section";
 import { Icon } from "@iconify/react";
 import { v4 as uuid } from "uuid";
-
+import Gusion from "@components/assets/gusion.png";
+import Nawaf from "@components/assets/nawaf.png";
+import Nabila from "@components/assets/Nabila.png";
+import Image from "next/image";
 const ColumnData = [
     {
         id: uuid(),
-        title: "Bejo",
-        icon: "carbon:user-avatar-filled-alt",
-        diterima: "Tehnik Indrusti - ITB",
+        title: "Rachenda Gosyen Nadindra M.",
+        icon: Gusion,
+        diterima:
+            "Diterima di 3 PTN: Pendidikan Dokter – Undip, Tek. Elektro – ITS, dan Teknik Informatika - UB",
         content:
-            " lorem ipsum NutriPlan has revolutionized my meal planning and nutrition journey. With its intuitive Notion template, I can effortlessly plan my meals, track my nutrition, and stay on top of my health goals. It's truly a game-changer!"
+            "Sungguh senang saya bisa diterima di 3 jurusan yang luar biasa dan berpeluang kerja besar di Indonesia, namun semua hasil itu tidak dapat saya raih sendirian. Saya sangat senang dengan program pembelajaran GO SupraCamp. Tertarik ikut SupraCamp karena lingkungannya mendukung, fasilitasnya mendukung, dan setiap hari isinya belajar. Kesannya ikut SupraCamp itu luar biasa, banyak pengalaman yang saya dapatkan dari SupraCamp ini, mulai dari pengalaman belajar, dan bertemu teman baru."
     },
     {
         id: uuid(),
-        title: "Sugih",
-        icon: "carbon:user-avatar-filled-alt",
+        title: "Nawaf Dhia Alwafa Dipatama",
+        icon: Nawaf,
+        diterima: "Diterima di Teknik Elektro - UI",
         content:
-            "I've tried various meal planning tools, but NutriPlan stands out from the rest. The customizable layouts and seamless recipe integration make it a breeze to create delicious and healthy meals. It's become an essential part of my wellness routine."
+            "SupraCamp Seru banget! teman-temennya juga baik-baik banget, kita di sana sama-sama belajar, dan saling memotivasi untuk bisa lolos UTBK-SNBT."
     },
     {
         id: uuid(),
-        title: "Ubay",
-        icon: "carbon:user-avatar-filled-alt",
+        title: "Nabila Azzahra",
+        icon: Nabila,
+        diterima:
+            "Diterima di 2 PTN: Pendidikan Dokter – UNSRI dan Kedokteran UBB",
         content:
-            "NutriPlan has made meal planning and tracking nutrition so much easier and enjoyable. The comprehensive features and user-friendly interface have helped me stay on track with my health goals. I highly recommend it to anyone looking for a convenient and effective solution."
-    },
-    {
-        id: uuid(),
-        title: "Mang Kem",
-        icon: "carbon:user-avatar-filled-alt",
-        content:
-            "I can't imagine my nutrition journey without NutriPlan. It has simplified the way I plan my meals and track my progress. The ability to customize layouts and easily integrate recipes has made healthy eating a breeze. It's been a true lifesaver!"
+            "SupraCamp Seru banget..! Bisa ketemu teman-teman baru sama lucu-lucu juga pas saat belajar, jadi tidak melulu serius tapi juga banyak ketawa."
     }
 ];
 
 export const Columns = () => {
     return (
-        <SectionContainer className="benefits-lists grid gap-x-8 gap-y-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-16">
+        <SectionContainer className="benefits-lists grid gap-x-4 gap-y-4 grid-cols-1 lg:grid-cols-3  mt-16">
             {ColumnData.map((item) => (
                 <div
                     id={item.id}
                     key={item.id}
-                    className="benefits-list--item text-[#737373] text-left border border-gray-200 p-2 rounded-md shadow-md"
+                    className="benefits-list--item text-[#737373] text-left border border-gray-200 p-2 rounded-md shadow-md h-fit"
                 >
-                    <Icon icon={item.icon} className="mb-4 w-10 h-10 my-2" />
-                    <h3 className="text-xl mb-2 font-medium text-black">
-                        {item.title}
-                    </h3>
+                    <div className="flex items-center">
+                        <Image
+                            alt="supracamp ganesha operation"
+                            className="w-28"
+                            src={item.icon}
+                        />
+                        <div className="">
+                            <h3 className="text-lg mb-0 font-medium text-gray-900">
+                                {item.title}
+                            </h3>
+                            <p className="text-sm font-semibold text-gray-800">
+                                {item.diterima}
+                            </p>
+                        </div>
+                    </div>
                     <div>
-                        <p>{item.diterima}</p>
-                        <p>{item.content}</p>
+                        <p className="text-sm">{item.content}</p>
                     </div>
                 </div>
             ))}

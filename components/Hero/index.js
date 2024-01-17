@@ -21,7 +21,7 @@ const Hero = () => {
                                 className="text-white text-center md:text-left"
                                 type="heavy"
                             >
-                                Supracamp Ganesha Operation
+                                SupraCamp Ganesha Operation
                             </PageTitle>
 
                             <BadgeGroup className={`-mt-14 mx-auto md:mx-0`}>
@@ -33,13 +33,13 @@ const Hero = () => {
                             <p className="!-mt-2 text-center text-darkGrayishBlue md:text-left text-white">
                                 SupraCamp adalah program unggulan Ganesha
                                 Operation dengan fasilitas <i>all in</i>, di
-                                mana kamu akan belajar dan tinggal di eL Hotel
-                                Royale, hotel Bintang 4 terbaik di Kota Bandung.
-                                Semua keperluanmu sudah disiapkan, jadi kamu
-                                hanya tinggal fokus untuk belajar. SupraCamp
-                                dirancang agar kamu memiliki mental sang juara,
-                                dengan menerapkan Formula 3B: Belajar, Berlatih,
-                                dan Bertanding selama proses pembelajaran.
+                                mana kamu akan belajar dan tinggal di éL Hotel ,
+                                hotel Bintang 4 terbaik di Kota Bandung. Semua
+                                keperluanmu sudah disiapkan, jadi kamu hanya
+                                tinggal fokus untuk belajar. SupraCamp dirancang
+                                agar kamu memiliki mental sang juara, dengan
+                                menerapkan Formula 3B: Belajar, Berlatih, dan
+                                Bertanding selama proses pembelajaran.
                                 Fasilitasnya yang lengkap dengan pendampingan
                                 belajar dan pengawasan 24 jam akan memastikan
                                 kamu untuk mampu menghadapi dan memenangkan
@@ -61,7 +61,10 @@ const Hero = () => {
                         {/* Image */}
 
                         <div className="md:w-1/2">
-                            <Image src={PeopleBanner} />
+                            <Image
+                                alt="supracamp ganesha operation"
+                                src={PeopleBanner}
+                            />
                         </div>
                     </div>
                 </div>

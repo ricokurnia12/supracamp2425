@@ -12,18 +12,19 @@ import { PageTitle } from "@components/Title";
 const settings = {
     dots: true,
     infinite: true,
-    speed: 1000,
+    speed: 900,
     slidesToShow: 1,
     autoplay: true,
     slidesToScroll: 1,
-    initialSlideHeight: 400
+    initialSlideHeight: 400,
+    arrows: false
 };
 const ContentImageData = [
     {
         id: uuid(),
         title: "Rasakan Serunya Belajar di Hotel Bintang 4!",
         content:
-            "eL Hotel Royale Bandung merupakan salah satu hotel Bintang 4 terbaik di Kota Bandung. Fasilitasnya yang lengkap nggak hanya bikin kamu nyaman saat tinggal selama program, tetapi juga lingkungan yang ideal untuk belajar. Fasilitas lengkap yang ditawarkan tidak hanya menciptakan suasana belajar yang tenang dan fokus, tetapi juga memberikanmu kenyamanan ekstra selama proses pembelajaran",
+            "éL Hotel Royale Bandung merupakan salah satu hotel Bintang 4 terbaik di Kota Bandung. Fasilitasnya yang lengkap nggak hanya bikin kamu nyaman saat tinggal selama program, tetapi juga lingkungan yang ideal untuk belajar. Fasilitas lengkap yang ditawarkan tidak hanya menciptakan suasana belajar yang tenang dan fokus, tetapi juga memberikanmu kenyamanan ekstra selama proses pembelajaran",
         align: "right",
         image: [Belajar1, Belajar2]
     },
@@ -39,18 +40,18 @@ const ContentImageData = [
 
 export const ContentImage = () => {
     return (
-        <SectionContainer className="content--image process-items mt-16 space-y-16 mx-auto py-8">
+        <SectionContainer className="content--image process-items mt-16 space-y-16 mx-auto py-8 ">
             <PageTitle
                 className="text-center mx-auto text-white"
                 type="standart"
             >
-                Intip keseruan prorgram Supracamp
+                Intip keseruan program SupraCamp
             </PageTitle>
             {ContentImageData.map((item) => (
                 <div
                     id={item.id}
                     key={item.id}
-                    className="grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto"
+                    className="px-4 grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto"
                 >
                     <div
                         className={`rounded-3xl ${
@@ -66,7 +67,7 @@ export const ContentImage = () => {
                                         width={412}
                                         height={412}
                                         objectFit="cover"
-                                        alt="Process Banner 1"
+                                        alt="supracamp ganesha operation"
                                         className="drop-shadow-2xl w-32 offset-y-0 offset-x-8 blur-16 rounded-md  border-4  border-white-50"
                                     />
                                 );
@@ -105,7 +106,7 @@ export const ContentImage = () => {
                 </div>
             ))}
             <iframe
-                className="w-full max-w-3xl mx-auto aspect-video rounded-md border-gray-300 shadow-lg"
+                className="w-full max-w-3xl mx-auto aspect-video rounded-md border-gray-300 shadow-lg px-4"
                 src="https://www.youtube.com/embed/2WzTDQ7jd88"
                 title="Nge-Game Bareng SupraCamp"
                 frameborder="0"

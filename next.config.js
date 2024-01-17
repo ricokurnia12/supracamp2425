@@ -12,7 +12,7 @@ const nextConfig = {
     sassOptions: {
         includePaths: [path.join(__dirname, "styles")]
     },
-    basePath: "/tessupracamp",
+    basePath: "/supracamp",
     images: {
         // Disable image optimization
         unoptimized: true
@@ -22,9 +22,10 @@ const nextConfig = {
     },
     env: {
         siteTitle: "Ganesha Operation",
-        siteDescription: "Tes",
-        siteKeywords: "Tes",
-        siteUrl: "Ganesha Operation"
+        siteDescription:
+            "SupraCamp adalah program unggulan Ganesha Operation dengan fasilitas all in, di mana kamu akan belajar dan tinggal di éL Hotel Royale, hotel Bintang 4 terbaik di Kota Bandung.",
+        siteKeywords: "Supracamp Ganesha Operation, Bimbel,ITB",
+        siteUrl: "https://ganeshaoperation.com/supracamp/"
     },
     headers() {
         return [

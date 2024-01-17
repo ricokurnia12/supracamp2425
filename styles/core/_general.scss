@@ -44,6 +44,12 @@ body {
     background-size: cover;
 }
 
+.card--timeline {
+    background-image: url("../../components/assets/bgtimelinecard.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .main {
     // @apply grid gap-8 sm:gap-16;
 }

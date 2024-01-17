@@ -1,9 +1,12 @@
 import React from "react";
 import { Icon } from "@iconify/react";
+import CardTimeline from "./CardTimeline";
+import KbmZoom from "@components/assets/kbmzoom.png";
+import Kbm from "@components/assets/kbm.png";
 const Timeline = () => {
     return (
         <div>
-            <div className="flex items-center">
+            <div className="flex flex-col lg:flex-row items-center mb-8">
                 <div className="max-w-sm w-full md:w-96  lg:max-w-full lg:flex shadow-lg mx-auto">
                     <div className="mx-auto border border-gray-400  lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col  justify-between leading-normal">
                         <div className="">
@@ -29,7 +32,7 @@ const Timeline = () => {
                                     loading="lazy"
                                     alt="Zoom"
                                     className="w-8 h-auto"
-                                    src="/tessupracamp/zoomicon.png"
+                                    src="/supracamp/zoomicon.png"
                                 />
                                 <div className="text-gray-900 font-bold text-sm mb-2">
                                     KBM SupraCamp Live Interaktif via Zoom
@@ -83,6 +86,16 @@ const Timeline = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="flex mx-auto gap-2 lg:gap-8 flex-wrap justify-center">
+                <CardTimeline
+                    image={KbmZoom}
+                    content={"KBM SupraCamp live interaktif via Zoom"}
+                />
+                <CardTimeline
+                    image={Kbm}
+                    content={"KBM tatap muka SupraCamp di hotel"}
+                />
             </div>
         </div>
     );

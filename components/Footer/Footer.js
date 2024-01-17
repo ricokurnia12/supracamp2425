@@ -9,16 +9,13 @@ const DATA = [
         title: "Hubungi Kami",
         items: [
             {
-                label: "(022)4218177",
-                href: "#features"
+                label: "(022)4218177"
             },
             {
-                label: "officialgopusat@gmail.com",
-                href: "#testimonials"
+                label: "officialgopusat@gmail.com"
             },
             {
-                label: "+62 811-2468-988",
-                href: "#faq"
+                label: "+62 811-2468-988"
             }
         ]
     },
@@ -26,23 +23,21 @@ const DATA = [
         title: "Info Lebih Lanjut",
         items: [
             {
-                label: "About",
-                href: "https://github.com/christian-luntok/",
-                target: "_blank"
-            },
-            {
                 label: "Twitter",
-                href: "https://github.com/christian-luntok/",
+                href: "https://twitter.com/officialgopusat/",
+                icon: "iconoir:x",
                 target: "_blank"
             },
             {
                 label: "Instagram",
-                href: "https://github.com/christian-luntok/",
+                href: "https://www.instagram.com/officialganeshaoperation/",
+                icon: "skill-icons:instagram",
                 target: "_blank"
             },
             {
                 label: "Facebook",
-                href: "https://github.com/christian-luntok/",
+                href: "https://id-id.facebook.com/ganesha.operation.official/",
+                icon: "logos:facebook",
                 target: "_blank"
             }
         ]
@@ -63,7 +58,7 @@ export const Footer = () => {
                             <div className="footer--logo grid gap-8">
                                 <Link href="/">
                                     <Image
-                                        src="/tessupracamp/logoGOcolor.svg"
+                                        src="/supracamp/logoGOcolor.svg"
                                         alt="logo"
                                         className="h-16 w-auto"
                                         height="25"
@@ -93,7 +88,7 @@ export const Footer = () => {
                                 {DATA.map((footerLinks, i) => (
                                     <div
                                         key={i}
-                                        className="footer-menu--container col-span-1 md:col-span-4"
+                                        className="footer-menu--container col-span-2 md:col-span-4"
                                     >
                                         <h3 className="font-bold text-base mb-2">
                                             {footerLinks.title}
@@ -114,6 +109,12 @@ export const Footer = () => {
                                                                 footerItem.target
                                                             }
                                                         >
+                                                            <Icon
+                                                                className="inline"
+                                                                icon={
+                                                                    footerItem.icon
+                                                                }
+                                                            />{" "}
                                                             {footerItem.label}
                                                         </a>
                                                     </li>
